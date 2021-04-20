@@ -1,0 +1,563 @@
+<html>
+    
+    <head>
+        <title>admission</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <script>
+        function myfun()
+        {
+            
+            var std = $(this).children("option:selected").val();
+            var aa = document.forms["myform"][""].value;
+            var bb = document.forms["myform"]["email"].value;
+            var cc = document.forms["myform"]["phno"].value;
+            var xx = document.forms["myform"]["message"].value;
+            
+           alert("this is aleart");
+             
+        }
+      
+ 
+    </script>
+    <body>
+        <form action="dimm" method="POST" enctype="multipart/form-data" name="myform">
+             {% csrf_token %}
+        <div class="jumbotron text-center bg-primary text-white">
+           
+            <h2>DUMMY SHIKSHAN PARASARAK MANDAL, AKOT's YOUR SCHOOL NAME [B.Ed.]</h2> 
+            <h3> NAME OF YOUR RESPECTED SCHOOL </h3>
+                <h4>TELHARA DIST.AKOLA</h4> 
+             <p>Academic Support by Sum known Power</p>
+          </div>         
+          <div class="container">
+              {{msg}}
+
+            <h2>Student Details</h2>
+            <div class="card">
+              <div class="card-body">
+ 
+        <div class ="col-md-12">
+
+            Class of Admission
+                   <select id="admission" name="cars" class="form-control">
+                      <option>select</option>
+                      <option value="1" {{one}}>1st Standard</option>
+                      <option value="2" {{two}} >2nd Standard</option>
+                      <option value="3" {{three}}>3rd Standard</option>
+                      <option value="4" {{four}}>4th Standard</option>
+                      <option value="5" {{five}}>5th Standard</option>
+                      <option value="6" {{six}}>6th Standard</option>
+                    <option value="7" {{seven}}>7th Standard</option>
+                    <option value="8" {{eight}}>8th Standard</option>
+                    <option value="9" {{nine}}>9th Standard</option>
+                    <option value="10" {{ten}}>10th Standard</option>
+                </select>
+                </div>
+     
+            <div class ="col-md-4 float-left ">
+                  First Name
+                      <input type ="text" placeholder="First Name" class = "form-control" name="Username" value="{{res.Username}}">
+            </div>
+
+                          <div class ="col-md-4 float-left">
+                           Middle Name
+                           <input type ="text"  placeholder="Middle Name" class = "form-control" name="Middlename" value="{{res.Middlename}}">
+                                        
+                                    </div>
+                                    <div class ="col-md-4 float-left">
+                                      Last Name
+                                      <input type ="text"  placeholder="Last Name"class = "form-control" name="Lastname" value="{{res.Lastname}}">
+                                                   
+                                            </div>
+                                            <div class ="col-md-4 float-left ">
+                                                Mother Name
+                                                    <input type ="text" placeholder="Mother Name" class = "form-control" name="Mothers_Name" value="{{res.Mothers_Name}}">
+                                                        </div>
+                              
+                                                        <div class ="col-md-4 float-left">
+                                                          Nationality
+
+                                                          <select id="Nationality" name="Nationality" class="form-control">
+                                                            <option>select</option>
+                                                            <option value="Indian" {{one}}>Indian</option>
+                                                            <option value="Foreign" {{two}}>Foreign</option>
+                                                      </select>
+                                                                  </div>
+                                                                 
+                                                           <div class ="col-md-4 float-left">
+                                                            Religion   
+                                                            <select id=" Religion" name="Religion" class="form-control">
+                                                              <option>select</option>
+                                                              <option value="Hinduism" {{one}}>Hinduism</option>
+                                                              <option value="Islam" {{two}} >Islam</option>
+                                                              <option value="Christianity" {{three}}>Christianity</option>
+                                                              <option value="Sikhism" {{four}}>Sikhism</option>
+                                                              <option value="Buddhism" {{five}}>Buddhism</option>
+                                                              <option value="Jainism" {{six}}>Jainism</option>
+                                                            <option value="Zoroastrianism" {{seven}}>Zoroastrianism </option>
+                                                            <option value="Judaism" {{eight}}>Judaism</option>
+                                                          </select>
+                                                                   </div>
+
+                                                         <div class ="col-md-4 float-left ">
+                                                          Category
+                                                          <select id="Category" name="Category" class="form-control">
+                                                            <option>select</option>
+                                                            <option value="OPEN" {{one}}>OPEN</option>
+                                                            <option value="OBC" {{two}}>OBC</option>
+                                                            <option value="SC" {{three}}>SC</option>
+                                                            <option value="ST" {{four}}>ST</option>
+                                                            <option value="NT" {{five}}>NT</option>
+                                                            <option value="VJNT" {{six}}>VJNT</option>
+                                                          <option value="OTHER" {{seven}}>OTHER</option>
+                                                        
+                                                        </select>     
+                                                                </div>
+
+                                                 <div class ="col-md-4 float-left">
+                                                          	Caste
+                                                  <input type ="text" placeholder="Caste" class = "form-control"  name="Caste" value="{{res.Caste}}">
+                                                 </div>
+
+                                                  <div class ="col-md-4 float-left">
+                                                    Mother Tongue
+                                                  <input type ="text" placeholder="Mother Tongue"class = "form-control"  name="Mother_Tongue" value="{{res.Mother_Tongue}}">
+                                                  </div>
+
+                             
+                                                   <div class ="col-md-4 float-left ">
+                                                       Gender
+                                                      <select id="Category" name="Gender" class="form-control">
+                                                        <option>select</option>
+                                                          <option value="Male" {{one}}>Male</option>
+                                                           <option value="Female" {{two}}>Female</option>
+                                                         </select>      
+                                                        </div>
+                                                                              
+                                                <div class ="col-md-4 float-left">
+                                                          Date Of Birth :- {{res.dob}}
+                                               <input type ="date" class = "form-control" name="dob">
+                                                </div>
+                                                   <div class ="col-md-4 float-left">
+                                                     Place Of Birth :-
+                                         <input type = "text" placeholder="Palce Of Birth" class = "form-control" name="pob" value="{{res.pob}}">
+                                                   </div>
+                                                 <div class ="col-md-4 float-left ">
+                                                        Age
+                                              <input type ="text" placeholder="Age" class = "form-control" name="Age" value="{{res.Age}}">
+                                                       </div>
+                                                 <div class ="col-md-4 float-left ">
+                                                  Aadhar Number
+                                               <input type ="text" placeholder=" Aadhar Number" class = "form-control" name="Aadhar_no" value="{{res.Aadhar_no}}">
+                                                 </div>
+                                                 <div class ="col-md-4 float-left ">
+                                                  Blood Group
+                                                  <select id="Blood Group" name="Bg" class="form-control">
+                                                    <option>select</option>
+                                                    <option value="Apos" {{one}}>A+</option>
+                                                    <option value="Anv" {{two}}>A-</option>
+                                                    <option value="Bpos" {{three}}>B+</option>
+                                                    <option value="Bnv" {{four}}>B-</option>
+                                                    <option value="Opos" {{five}}>O+</option>
+                                                    <option value="Onv" {{six}}>O-</option>
+                                                  <option value="ABpos" {{seven}}>AB+</option>
+                                                  <option value="ABnv" {{eight}}>AB-</option>
+                                                </select>     
+                                                        </div>
+
+                                                <div class ="col-md-4 float-left">
+                                                 Address Of Communication
+                                                 <textarea placeholder="Address Of Communication" class = "form-control" name="Addr_of_com">{{res.Addr_of_com}}</textarea>
+                                                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+              </div>
+            </div>
+          </div>  
+          <div class="container">
+            <h2>School Details</h2>
+            <div class="card">
+              <div class="card-body">
+
+     
+                <div class ="col-md-6 float-left ">
+                  Last Class/School attended by the child:
+                      <input type ="text" placeholder="First Name" class = "form-control" name="School_attended_by_the_child" value="{{res.School_attended_by_the_child}}">
+                 </div>
+                <div class ="col-md-6 float-left">
+                                Telephone/Mobile NO:
+                                <input type ="text"  placeholder="Middle Name" class ="form-control" name="school_mob" value="{{res.school_mob}}">
+                </div>
+
+                                                
+
+              </div>
+            </div>
+          </div><br>
+          <div class="container">
+              <h1>Guardian Information</h1>
+              <div class="card">
+                  <div class="card-body">
+                      <div class="row">
+                      <div class="col-md-4">
+                          Name
+                            <input type="text" placeholder="Name of Guardian" name="Gurdian_Name" value="{{res.Gurdian_Name}}">
+                      </div>
+                      <div class="col-md-4">
+                          Relationship
+                          <input type="text" placeholder="Relationship with Guardian" name="Relationship" value="{{res.Relationship}}">
+                      </div>
+                      <div class="col-md-4">
+                          Contact No
+                          <input type="text" placeholder="Guardians Mobile no" name="Contact_No" value="{{res.Contact_No}}">
+                      </div>
+</div>
+                  </div>
+              </div>
+          </div>   <br><br>
+          <div class="container">
+            <h2>Information of Parents</h2>
+            <div class="card">
+              <div class="card-body">
+
+     
+                <div class ="col-md-4 float-left ">
+                  Father Name
+                      <input type ="text" placeholder="Father Name" class = "form-control" name="Father_Name" value="{{res.Middlename}}">
+                          </div>
+
+                          <div class ="col-md-4 float-left">
+                           Date Of Birth:- {{res.fatherdob}}
+                           <input type ="Date"  placeholder="Date of Birth" class = "form-control" name="fatherdob" >
+                                        
+                                    </div>
+                                    <div class ="col-md-4 float-left">
+                                      Qualification
+                                      <input type ="text"  placeholder="Qualification" class = "form-control" name="father_Quli" value="{{res.father_Quli}}">
+                                                   
+                                               </div>
+
+                                               <div class ="col-md-4 float-left ">
+                                                Mother Name
+                                                    <input type ="text" placeholder="Mother Name" class = "form-control" name="mother_name" value="{{res.mother_name}}">
+                                                        </div>
+                              
+                                                 <div class ="col-md-4 float-left">
+                                                      Date Of Birthvalue:-{{res.Mother_dob}}
+                                                  <input type ="date" placeholder="Caste" class = "form-control" name="Mother_dob">
+                                                 </div>
+
+                                                  <div class ="col-md-4 float-left">
+                                                    Qualification
+                                                  <input type ="text" placeholder="Qualification"class = "form-control" name="mother_Quli" value="{{res.mother_Quli}}">
+                                                  </div>
+
+                                                 <div class ="col-md-4 float-left ">
+                                                    E-Mail id
+                                              <input type ="text" placeholder="e.g:school12@gmail.com"class = "form-control" name="E_mail" value="{{res.E_mail}}">
+                                                       </div>
+                                                 <div class ="col-md-4 float-left ">
+                                                  Mobile Number
+                                               <input type ="text" placeholder="Mobile Number" class = "form-control" name="father_mob" value="{{res.father_mob}}">
+                                                 </div>
+                                                <div class ="col-md-4 float-left">
+                                                 Address
+                                                 <textarea placeholder="Address" class ="form-control" name="parents_addr"> {{res.parents_addr}} </textarea>
+                                                </div>  
+                                              </div>
+                                            </div>
+          </div>
+ <div class="container">
+         <h2>Little About Your CHILD</h2>
+         <div class="card">
+             <div class="card-body">
+                  <div class ="col-md-6 float-left ">
+                       Language spoken at Home
+                       <input type ="text" placeholder="Language spoken at Home" class = "form-control" name="LGSPOKEH" value="{{res.LGSPOKEH}}">
+                  </div>
+                                      
+                  <div class ="col-md-6 float-left">
+                          Which language is best to understood your child?
+                          <input type ="text"  placeholder="Which languages are best understood by your child?" class = "form-control" name="bestlang" value="{{res.bestlang}}">
+                  </div>
+
+                  <div class ="col-md-6 float-left">
+                          How takes care of your child at home?
+                          <textarea  placeholder="How takes care of your child at home?" class = "form-control" name="howtakecare"> {{res.howtakecare}} </textarea>
+                  </div>
+
+                  <div class ="col-md-6 float-left ">
+                       Does your child have Special needs? If Yes, give details?
+                       <textarea placeholder="Does your child have Special needs? If Yes, give details?" class ="form-control" name="speccial_needs">{{res.speccial_needs}}  </textarea>
+                  </div>
+             </div>
+         </div>
+</div>
+<div class="container">
+     <h2>Documents To Be Upload</h2>
+     <div class="card">
+           <div class="card-body">
+                                              
+                 <div class ="col-md-6 float-left ">
+                     Aadhar Card
+                     <br>
+                    <input type ="file" id="Aadhar" name="aadhar"accept="image/*" >
+                    <img id="Aadharimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px" />
+                                                                                                           
+                </div>
+                                                                                    
+            <div class ="col-md-6 float-left ">
+                Original Birth Certificate (Nursery to 1std)
+               <br>
+                <input type ="file" id="BirthCertificate" name="birthcirti" accept="image/*">
+                <img id="BirthCertificateimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+            </div>
+            <div class ="col-md-6 float-left ">
+                School Leaving Certificate(T.C)
+                <br>
+                <input type ="file" id="TC" name="tc" accept="image/*">
+                <img id="TCimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+                                                                                                                                   
+             </div>
+            <div class ="col-md-6 float-left ">
+                Previous Year Report Card.(Marksheet)
+                <br>
+                <input type ="file" id="Marksheet" name="Marksheet" accept="image/*">
+                <img id="Marksheetimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+            </div>
+            <div class ="col-md-6 float-left ">
+                Passport size photograph of the student
+                <br>
+                <input type ="file" id="student" name="stdphoto" accept="image/*">
+                <img id="studentimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+                                                                                                                                                           
+            </div>
+                                                                                                                                                                   
+            <div class ="col-md-6 float-left ">
+                Cumulative record(san)
+                    <br>
+                <input type ="file" id="san" name="san" accept="image/*">
+                <img id="sanimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+            </div>
+            <div class ="col-md-6 float-left ">
+                ID Proof
+                <br>
+                    <input type ="file" id="IDProof " name="IDProof" accept="image/*">
+                    <img id="IDProofimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+            </div>
+           </div>
+     </div>
+</div>
+<div class="container">
+<h2>DISCLAIMER BY PARENTS</h2>
+<div class="card">
+     <div class="card-body">
+            <p>We are aware that we have only filled an "Application Of Enrollment From". It is not an Enrollment form and this does not guarantee enrollment to "Yashogatha Public School, Telhara". I understand that enrollment will be on first come first basis of seats available. I understandt that the school does not provide transport facilities. i will be responsible for may ward's transport to school.</p>
+            <br>
+             <p>I shall abide by all the rules & regulation of school already in existence or those that may be implemented in future. Enrollment once paid for are strictly non refundable.</p>
+             <div class ="col-md-4 float-left ">
+                    Date:- {{res.date}}
+                <input type ="date" placeholder="First Name" class = "form-control" name="date" >
+             </div>
+             <div class ="col-md-4 float-left ">
+                    Palce
+                  <input type ="text" placeholder="Place" class = "form-control" name="place" value="{{res.place}}">
+             </div>
+
+             <div class ="col-md-6 float-left">
+                Parents signture
+                <br>
+                  <input type ="file" id="Parentssignture" name="parentsign" accept="image/*">
+                  <img id="Parentssigntureimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px"/>
+
+             </div>
+             <div class="col-md-12 float-left text-allign-right">
+                <br>
+
+
+                <input type ="submit" id="Submit" class="btn btn-primary"   onsubmit="myfun()">
+                 
+
+                {% if res.id != None %}
+                 
+                    <a href="updat"> <input type ="button" value="Update" id="Update" class= "btn btn-primary"></a>
+                 {% endif %}
+
+               <a href="cool"> <input type ="button" value="Cancel" id="Cancel" class= "btn btn-primary" ></a>
+                <a href="dip"> <input type ="button" value="display" id="" class= "btn btn-primary"></a>
+             </div>
+     </div>
+  </div>
+</div>
+<br>
+</form>
+</body>
+
+</html>                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                     
+
+        <script type="text/javascript">
+          $(document).ready(function()
+          {
+            $("#Aadharimg").hide();
+            $("#BirthCertificateimg").hide();
+            $("#TCimg").hide();
+            $("#Marksheetimg").hide();
+            $("#IDProofimg").hide();
+            $("#studentimg").hide();
+            $("#sanimg").hide();
+            $("#Parentssigntureimg").hide();
+          
+            
+          });
+          //upload Aadhar image
+          function readURL(input) {
+            if (input.files && input.files[0]) {
+              var reader = new FileReader();
+              
+              reader.onload = function(e) 
+              {
+                $('#Aadharimg').attr('src', e.target.result);
+              }
+              
+              reader.readAsDataURL(input.files[0]); // convert to base64 string
+            }
+          }
+          
+          $("#Aadhar").change(function() {
+            readURL(this);
+            $("#Aadharimg").show();
+          });
+  //upload Birth Certificate image
+  function readURL2(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      
+      reader.onload = function(e) 
+      {
+        $('#BirthCertificateimg').attr('src', e.target.result);
+      }
+      
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+  }
+  
+  $("#BirthCertificate").change(function() {
+    readURL2(this);
+    $("#BirthCertificateimg").show();
+  });
+
+ //upload school leaving Certificate image(T.C)
+ function readURL3(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#TCimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#TC").change(function() {
+  readURL3(this);
+  $("#TCimg").show();
+});
+
+//Previous Year Report Card.(Marksheet)
+function readURL4(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#Marksheetimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#Marksheet").change(function() {
+  readURL4(this);
+  $("#Marksheetimg").show();
+});
+//Passport size photograph of the student
+function readURL5(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#studentimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#student").change(function() {
+  readURL5(this);
+  $("#studentimg").show();
+});
+//Cumulative record(san)
+function readURL6(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#sanimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#san").change(function() {
+  readURL6(this);
+  $("#sanimg").show();
+});
+//Cumulative record(san)
+function readURL7(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#IDProofimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#IDProof").change(function() {
+  readURL7(this);
+  $("#IDProofimg").show();
+}); 
+
+//Parents signture
+function readURL8(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) 
+    {
+      $('#Parentssigntureimg').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#Parentssignture").change(function() {
+  readURL8(this);
+  $("#Parentssigntureimg").show();
+}); 
+
+        </script>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+
+    <title></title>
+
+     <style>
+          /* CSS used here will be applied after bootstrap.css */
+    
+    body { 
+       background: url('https://bootdey.com/img/Content/bg1.jpg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+     }
+     
+     .panel-default
+      {
+      opacity: 0.9;
+      margin-top:30px;
+     }
+    
+     .form-group.last 
+     {
+      margin-bottom:0px;
+     }
+      
+          </style>
+      </head>
+  <body>
+     <div class="col-md-12">
+       <div class="row">
+      <div class="col-md-4 float-left">
+
+      </div>
+     <div class="col-md-4 float-left" style="margin-top :8%;"> 
+       <div class="card">
+     
+      <div class="card-body">
+        <h4 class="text-muted">SignIn</h4>
+           {% if msg == 1 %}
+          
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong>Suscessfully!</strong> Your Record is Inserted
+               </div>
+          
+          {% elif msg == 2 %}
+          
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Please!</strong> Enter Valid Inputs!!
+                </div>
+          
+          {% endif %}
+        <form action="slog" method="post">
+             {% csrf_token %}
+          Roll Number 
+              <input type ="text" placeholder="Roll NO" class = "form-control" name="roll">       
+                  Password
+                   <input type ="password"  placeholder="Password" class = "form-control" name="pass"> 
+                 
+                 
+                 
+                    <br>
+                    <div class="checkbox">
+                      <label class="">
+                          <input type="checkbox" class="">Remember me</label>
+                  </div>
+                  <input type ="submit" value="SignIn" id="SignIn" class="btn btn-primary">
+                   <a href="stdsignup"><input type ="button" value="SignUp" id="SignUp" class= "btn btn-primary"></a>
+                  <input type ="button" value="Reset" id="Reset" class= "btn btn-primary">
+                  <div class="panel-footer">Forget password? <a href="otp" class="">Click here</a>
+                  </div>
+        </form>  
+                   
+   </div>
+  </div>
+
+     <div class="col-md-4 float-right"></div>   
+ </div>
+</div>
+      </div>
+   
+  </body>
+  </html>

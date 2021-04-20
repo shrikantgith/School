@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+
+    <title></title>
+    <style>
+        .nav{
+            
+            
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+        }
+        body{
+               
+             transition: background-color .5s;
+            
+        }
+        .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+        .container-fluid{
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .v{
+            margin-bottom: 30px;
+        }
+        .hr{
+            color: darkblue;
+        }
+        
+        .std{
+            display: none;
+        }
+        .subj{
+            display: none;
+        }
+        .fe{
+            display: none;
+        }
+        .back{
+            display: none;
+        }
+        
+        
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+   <!-- Image and text -->
+    
+    <div class="row ">
+        <div class="col-sm-12">
+         
+            <div id="mySidenav" class="sidenav">
+                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                       <a href="#" style="margin-left: 70px;" ><i class="fas fa-user-circle fa-2x"></i>  </a> 
+                        <a href="#" style="margin-left: 0%;">Shrikant Sawarkar</a><br><br>
+                        <a href="#" class="tablinks" onclick="openTab(event,'notic')">Notic Board</a>
+                          <a href="#" class="tablinks"  onclick="openTab(event,'subject')" id="defaultOpen">Class</a>
+                          <a href="#" class="tablinks"  onclick="openTab(event,'Home')">Home Work</a>
+                          <a href="#" class="tablinks"  onclick="openTab(event,'comp')">Complited</a>
+                          <a href="#"  >Logout</a>
+            </div>
+
+            <div id="main">
+                 <nav class="navbar navbar-light bg-light nav">
+                       <a class="navbar-brand" href="#"><img src="image\Best-School-in-Meerut-1.png" alt="Logo" style="width:40px;">
+                        </a>
+                        <h2>School Name</h2>
+                </nav>
+                  <div class="container-fluid p-3">
+                        <span style="font-size:30px;cursor:pointer " onclick="openNav()">&#9776; open</span> <br><i class="fas fa-arrow-circle-left float-right fa-2x back"></i><br>
+                    <div class="container tabcontent p-3" id="notic">
+                       <h1>this is notic </h1>
+                    </div>
+                 <div class="container tabcontent p-5" id="subject">
+                      <div class="row">
+                          <div class="col-sm-2 ">
+                               <button type="button" class="btn btn-outline-secondary btn-lg  v" id="1"  >1  Standard</button> 
+                          </div>
+                            
+                          <div class="col-sm-2  ">
+                             <button type="button" class="btn btn-outline-secondary btn-lg  v"   >2 Standard</button>
+                          </div>
+                          
+                          <div class="col-sm-2  ">
+                             <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">3  Standard</button>
+                          </div>
+                          
+                          <div class="col-sm-2 ">
+                               <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">4 Standard</button>
+                          </div>
+                          
+                          <div class="col-sm-2  ">
+                              <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">5  Standard</button>
+                          </div>
+                     </div>
+                     <div class="row">
+                         <div class="col-sm-2  ">
+                             <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">6  Standard</button>
+                         </div>
+                         <div class="col-sm-2  ">
+                             <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">7  Standard</button>
+                         </div>
+                         <div class="col-sm-2  ">
+                            <button type="button" class="btn btn-outline-secondary btn-lg v "  onclick="change()">8  Standard</button>
+                         </div>
+                         <div class="col-sm-2  ">
+                            <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">9  Standard</button>
+                         </div>
+                         <div class="col-sm-2  ">
+                             <button type="button" class="btn btn-outline-secondary btn-lg v"  onclick="change()">10  Standard</button>
+                         </div>
+                     </div>
+                </div>
+                      <hr>
+
+                <div class="container tabcontent" id="Home">
+                    <h1>This is the Notic homework</h1>
+                </div>
+                <div class="container tabcontent" id="comp">
+                    <h1>This is the Notic complited</h1>
+                </div>
+                      
+                 <div class="container std" id="vdd">
+                    <h1>This is 1st standard</h1>
+                </div>
+                <div class="container std" id="2">
+                    <h1>This is 2nd standard</h1>
+                </div>
+                <div class="container subj" id="subject">
+                     <a href="#"><div class="alert alert-primary eng" role="alert" >
+                            <center>English</center>
+                    </div></a>
+
+                    <div class="alert alert-secondary eng" role="alert">
+                            <center>Physic</center>
+                    </div>
+                    <div class="alert alert-warning eng" role="alert">
+                            <center>Chemistary</center>
+                    </div>
+                    <div class="alert alert-success eng" role="alert">
+                            <center>Math</center>
+                    </div>
+                    <div class="alert alert-danger eng" role="alert">
+                            <center>Biology</center>
+                    </div>
+                </div>
+                <center>
+                    <div class="container fe">
+                        <div class="row">
+
+                                <div class="col-sm-12">
+                                      <input type ="file" id="Aadhar" name="aadhar"accept="image/*" >
+                                        <img id="Aadharimg" src="#" alt="your image" class="img-thumbnail" height="100px" width="100px" />
+
+                                </div><br><br>
+                                <div class="col-sm-12">
+                                    <textarea placeholder="Your Comment" rows="12" cols="70"></textarea><br><br>
+                                    <button type="button" class="btn btn-primary btn-lg">Submit</button>
+                                </div><br><br>
+                            <center></center>
+
+                        </div>
+
+
+                    </div>
+                </center>
+                      
+                
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+function openTab(evt,tabs){
+   var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++)
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) 
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+      document.getElementById(tabs).style.display = "block";
+        evt.currentTarget.className += " active";
+}
+
+//hide sho jQ
+$(document).ready(function(){
+    //1std
+    $(".v").click(function(){
+       $(".v").hide();
+        
+   
+    });
+    //2std
+     $("#1").click(function(){
+        $(".subj").show();
+         $(".back").show();
+          $(".back").click(function()
+          {
+                $(".v").show();
+                $(".subj").hide();
+              $(".fe").hide();
+          });
+             
+                  
+             
+         
+    });
+ 
+    //sbbj
+    $(".eng").click(function(){
+        $(".eng").hide();
+        $(".fe").show();
+        
+    });
+    
+    
+});
+ 
+ 
+document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").focus();
+</script>
+</body>

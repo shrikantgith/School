@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> hello world</h1>
+<h2>{{msg}}</h2>
+    <br>
+              {% for i in rec %}
+
+                    <br>
+                    {{i.id}}
+                    {{i.cars}}
+                    {{i.Username}}
+                    {{i.Middlename}}
+                    {{i.Lastname}}
+                    {{i.Mothers_Name}}
+                    {{i.Nationality}}
+                    {{i.Religion}}
+                    {{i.Category}}
+                    {{i.Caste}}
+                    {{i.Mother_Tongue}}
+                    {{i.Gender}}
+                    {{i.dob}}
+                    {{i.pob}}
+                    {{i.Age}}
+                    {{i.Aadhar_no}}
+                    {{i.Bg}}
+                    {{i.Addr_of_com}}
+                    {{i.School_attended_by_the_child}}
+                    {{i.school_mob}}
+                    {{i.Gurdian_Name}}
+                    {{i.Relationship}}
+                    {{i.Contact_No}}
+                    {{i.fatherdob}}
+                    {{i.father_Quli}}
+                    {{i.mother_name}}
+                    {{i.Mother_dob}}
+                    {{i.mother_Quli}}
+                    {{i.E_mail}}
+                    {{i.father_mob}}
+                    {{i.parents_addr}}
+                    {{i.LGSPOKEH}}
+                    {{i.bestlang}}
+                    {{i.howtakecare}}
+                    {{i.speccial_needs}}
+                    {{i.date}}
+                    <!-- files -->
+
+                    <img src="{{i.parentsign.url}}" alt="Not Found" height="100px" width="100px">
+                    <img src="{{i.aadhar.url}}" alt="Not Found" height="100px" width="100px">
+                     <img src="{{i.birthcirti.url}}" alt="Not Found" height="100px" width="100px">
+                     <img src="{{i.tc.url}}" alt="Not Found" height="100px" width="100px">
+                     <img src="{{i.Marksheet.url}}" alt="Not Found" height="100px" width="100px">
+                     <img src="{{i.san.url}}" alt="Not Found" height="100px" width="100px">
+                     <img src="{{i.IDProof.url}}" alt="Not Found" height="100px" width="100px">
+
+              {% endfor %}
+                <br>
+                <br>
+                <h1>Welocme2</h1>
+                <h1>{{std.0.cars}}</h1>
+                <h1>{{a.Userid}}</h1>
+                <h1>{{a.pin}}</h1>
+                <h1>{{msg}}</h1>
+                <h1>{{msg.0.Userid}}</h1>
+                <h1>{{msg.0.pin}}</h1>
+                <h1>{{msg.0.phno}}</h1>
+                <h1>custommer quearys</h1>
+                {% for i in inq %}
+                    <p>{{i.name}}</p>
+                    <p>{{i.email}}</p>
+                    <p>{{i.phno}}</p>
+                    <p>{{i.Comment}}</p>
+                {% endfor %}
+</body>
+</html>

@@ -1,0 +1,118 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script>
+           function myFunction() 
+            {
+                var x = document.getElementById("myInput");
+                var y = document.getElementById("myInputt");
+                if (x.type === "password" && y.type ==="password") 
+                {
+                    x.type = "text";
+                     y.type = "text";
+                } 
+                else 
+                {
+                    x.type = "password";
+                    y.type = "password";
+                }
+            }
+            
+           
+                
+            
+            
+        </script>
+
+        <style>
+          /* CSS used here will be applied after bootstrap.css */
+    
+    body { 
+       background: url('https://bootdey.com/img/Content/bg1.jpg') no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+     }
+     
+     .panel-default
+      {
+      opacity: 0.9;
+      margin-top:30px;
+     }
+    
+     .form-group.last 
+     {
+      margin-bottom:0px;
+     }
+      
+          </style>
+      </head>
+  <body>
+     <div class="col-md-12">
+         
+<form action="adminadd" method="post">
+                   {% csrf_token %}
+       <div class="row">
+      <div class="col-md-4 float-left">
+          
+
+      </div>
+     <div class="col-md-4 float-left" style="margin-top :8%;"> 
+       <div class="card">
+     
+      <div class="card-body">
+        <h5 class="text-muted">SignUp</h5>
+          {% if msg == 1 %}
+          
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <strong>Suscessfully!</strong> Your Record is Inserted
+               </div>
+          
+          {% elif msg == 2 %}
+          
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Please!</strong> Enter Valid Inputs!!
+                </div>
+          
+          {% endif %}
+          
+          User Name
+              <input type ="text" placeholder="User Name" class = "form-control" name="user"> 
+          Mobile NO
+                <input type="text" placeholder="Mob No" class="form-control" name="mobile">
+                  Password
+                   <input type="password"  placeholder="Password" class = "form-control" id ="myInput"> 
+                   Re Enter Password
+                   <input type="password"  placeholder="Password" class = "form-control" name="pass" id="myInputt"> 
+                 
+                 
+                    <br>
+                    <div class="checkbox">
+                      <label class="">
+                          <input type="checkbox" class=""   onclick="myFunction()">Show password</label>
+                  </div>
+                
+                    <input type ="submit" value="SignUp" id="SignUp" class= "btn btn-primary">
+                    <input type ="reset" value="Reset" id="Reset" class= "btn btn-primary">
+                    
+                    </div>
+                  
+                   
+   </div>
+  </div>
+
+     <div class="col-md-4 float-right"></div>   
+ </div>
+</form>
+</div>
+   
+  </body>
+  </html>

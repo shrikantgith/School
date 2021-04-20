@@ -1,0 +1,176 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Elephantatech</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <style>
+        .mt{
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+    <body>
+         <div class="container-fluid mt">
+            <div class="card bg-light text-dark">
+                <center><div class="card-body"><b><h2 class="head">Exemination</h2></b></div></center>
+            </div>
+        </div>
+        
+        <br>
+                    <br>
+         <form method="post">
+             <div class="container-fluid">
+                 {% for i in b %}
+                         <div class="row">
+                             <div class="col-sm-12">
+                                 <h4> {{i.question}}</h4>
+                             </div>
+                             <div class="col-sm-12"><br>
+                                        <div class="form-check">
+                                              <label class="form-check-label" for="radio1">
+                                                <input type="radio" class="form-check-input" id="radio1" name="{{i.id}}" value="option1" >{{i.a}}
+                                              </label>
+                                        </div>
+                                            <br>
+                                              <div class="form-check">
+                                                  <label class="form-check-label" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="{{i.id}}}" value="option2">{{i.b}}
+                                                  </label>
+                                              </div><br>
+                                              <div class="form-check">
+                                                      <label class="form-check-label" for="radio3">
+                                                        <input type="radio" class="form-check-input" id="radio3" name="{{i.id}}" value="option3">{{i.c}}
+                                                      </label>
+                                                </div><br>
+                                       <div class="form-check">
+                                              <label class="form-check-label" for="radio4">
+                                                <input type="radio" class="form-check-input" id="radio4" name="{{i.id}}" value="option4">{{i.d}}
+                                              </label>
+                                        </div><br>
+
+
+                                        <input type ="button" value="Mark" id="Cancel" class= "btn btn-primary ml-3" >
+                                        <hr>
+                             </div>
+
+                         </div>
+                {% endfor %}
+                <center><input type ="button" value="Submit" id="Cancel" class= "btn btn-primary ml-3" ></center><br><br>
+<br> <br>               
+                   <!--
+                <div class="row">
+                     <div class="col-sm-12">
+                         <h4> Q2. Ordinary table salt is sodium chloride. What is baking soda?</h4>
+                     </div>
+                     <div class="col-sm-12"><br>
+                                <div class="form-check">
+                                      <label class="form-check-label" for="radio1">
+                                        <input type="radio" class="form-check-input" id="radio1" name="optradio1" value="option1" checked>Option 1
+                                      </label>
+                                </div>
+                                    <br>
+                                      <div class="form-check">
+                                          <label class="form-check-label" for="radio2">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                          </label>
+                                      </div><br>
+                                      <div class="form-check">
+                                              <label class="form-check-label" for="radio2">
+                                                <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                              </label>
+                                        </div><br>
+                               <div class="form-check">
+                                      <label class="form-check-label" for="radio2">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                      </label>
+                                </div><br>
+                           
+                                 
+                                <input type ="button" value="Mark" id="Cancel" class= "btn btn-primary ml-3" >
+                                <hr>
+                     </div>
+                     
+                 </div>
+                                  
+                <div class="row">
+                     <div class="col-sm-12">
+                         <h4> Q3. Ordinary table salt is sodium chloride. What is baking soda?</h4>
+                     </div>
+                     <div class="col-sm-12"><br>
+                                <div class="form-check">
+                                      <label class="form-check-label" for="radio1">
+                                        <input type="radio" class="form-check-input" id="radio1" name="optradio1" value="option2" checked>Option 1
+                                      </label>
+                                </div>
+                                    <br>
+                                      <div class="form-check">
+                                          <label class="form-check-label" for="radio2">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                          </label>
+                                      </div><br>
+                                      <div class="form-check">
+                                              <label class="form-check-label" for="radio2">
+                                                <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                              </label>
+                                        </div><br>
+                               <div class="form-check">
+                                      <label class="form-check-label" for="radio2">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Option 2
+                                      </label>
+                                </div><br>
+                           
+                                 
+                                <input type ="button" value="Mark" id="Cancel" class= "btn btn-primary ml-3" >
+                                <hr>
+                     </div>
+                     
+                 </div>
+                 
+                                  
+                <div class="row">
+                     <div class="col-sm-12">
+                         <h4> Q4. Ordinary table salt is sodium chloride. What is baking soda?</h4>
+                     </div>
+                     <div class="col-sm-12"><br>
+                                <div class="form-check">
+                                      <label class="form-check-label" for="radio1">
+                                        <input type="radio" class="form-check-input" id="radio1" name="optradio3" value="option1" checked>Option 1
+                                      </label>
+                                </div>
+                                    <br>
+                                      <div class="form-check">
+                                          <label class="form-check-label" for="radio2">
+                                            <input type="radio" class="form-check-input" id="radio2" name="optradio3" value="option2">Option 2
+                                          </label>
+                                      </div><br>
+                                      <div class="form-check">
+                                              <label class="form-check-label" for="radio2">
+                                                <input type="radio" class="form-check-input" id="radio2" name="optradio3" value="option2">Option 2
+                                              </label>
+                                        </div><br>
+                               <div class="form-check">
+                                      <label class="form-check-label" for="radio2">
+                                        <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option3">Option 2
+                                      </label>
+                                </div><br>
+                           
+                                 
+                                <input type ="button" value="Mark" id="Cancel" class= "btn btn-primary ml-3" >
+                                <hr>
+                     </div>
+                     
+                 </div> -->
+             </div>
+        </form>
+    </body>
+</html>

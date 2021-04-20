@@ -1,0 +1,1159 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+       <script src='https://meet.jit.si/external_api.js'></script>
+
+    <title></title>
+      <style>
+      body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+    
+}
+          .navbar-nav { 
+            margin-left: auto; 
+        } 
+           
+          #opt{
+              display: none;
+          }
+          #opt1{
+              display: none;
+          }
+          #opt2{
+              display: none;
+          }
+           #opt3{
+              display: none;
+          }
+</style>
+ <script>
+        $(document).ready(function()
+        {
+            $("select.std").change(function()
+            {
+                var std = $(this).children("option:selected").val();
+                if(std==10)
+                    {
+                            $(".po").hide();
+                          $(".st").show();
+                        
+                    }
+                else if(std==8)
+                    {
+                        $(".po").hide();
+                        $(".stt").show();
+                        
+                    }
+                else if(std==1)
+                    {
+                        $(".po").hide();
+                        $(".sttt").show();
+                        
+                    }
+                 
+            });
+            
+             
+        });
+    </script>
+    <style>
+        .st,.stt{
+            display: none;
+        }
+        #shaw{
+            display: none;
+        }
+         
+    </style>
+      
+      <script>
+          function dip(){
+              document.getElementById("adstd").style.display = "none";
+              document.getElementById("shaw").style.display="inline";
+          }
+      </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark tp">
+
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                          
+                        <ul class="navbar-nav  ">
+                            <a class="navbar-brand" href="#"><img src=" {% static 'image\Best-School-in-Meerut-1.png' %}" alt="Logo" style="width:40px;"></a>
+                          
+                        </ul>
+                      </div>  
+    </nav>
+<div class="container-fluid">
+<div class="row">
+    
+    <div class="col-sm-12">
+        <div id="mySidenav" class="sidenav">
+            
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" style="margin-left: 50px;" ><i class="fas fa-user-circle fa-2x"></i>  </a> 
+                <a href="#" style="margin-left: 0%;">Om Sawarkar</a><br><br>
+                <a href="#" class="tablinks" onclick="openTab(event,'alls')">Students</a>
+                <a href="#" class="tablinks" onclick="openTab(event,'live')">Go Live</a>
+                <a href="#" class="tablinks" onclick="openTab(event,'adstd')">Add Students</a>
+                <a href="#" class="tablinks" onclick="openTab(event,'notic')">Add Notic</a>
+                <a href="#" class="tablinks"  onclick="openTab(event,'subject')" id="defaultOpen">Add Assinment</a>
+                <a href="#" class="tablinks"  onclick="openTab(event,'submited')" id="defaultOpen">Submited</a>
+                <a href="#" class="tablinks"  onclick="openTab(event,'exam')" id="defaultOpen">Examination</a>
+                <a href="exam2" class="tablinks"    id="defaultOpen">Exam2</a>
+                
+ 
+            
+              <a href="tlogof"  >Logout</a>
+        </div>
+
+        <div id="main">
+            
+                
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            
+                <!-- this is Notic  -->
+                <div class="container tabcontent" id="notic">
+                   
+                    <div class="row">
+                        <div class="col-md-12">
+                                <h3><b>Notice</b></h3>
+                                    <hr>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <from action="#">
+                                            <div class="from-group">
+                                                    <label for = "usr">Class</label>
+                                                  <select name="cars" class="custom-select mb-3">
+                                                      <option value="">--Select--</option>
+                                                                <option value="1">1st Std</option>
+                                                                <option value="2">2nd Std</option>
+                                                                <option value="3">3rd Std</option>
+                                                                <option value="4">4th Std</option>
+                                                                <option value="5">5th Std</option>
+                                                                <option value="6">6th Std</option>
+                                                                <option value="7">7th Std</option>
+                                                                <option value="8">8th Std</option>
+                                                                <option value="9">9th Std</option>
+                                                                <option value="10">10th Std</option>
+                                                    </select>
+                                 
+ 
+                                            </div>
+                                            <div class="form-group">
+                                                <label for = "usr">Title</label>
+                                                <input type="text" class="form-control" id="usr">
+                                            </div>
+                                             <div class="form-group">
+                                                  <label for="comment">Comment:</label>
+                                                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                                            </div> 
+                                             
+                                             <input type="submit" value="Submit" class="btn btn-primary">
+                                        </from>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                   
+                    
+                </div>
+            
+                    <!-- This is Subjects -->
+            {% if msg == 1 %}
+               <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                         Please Provide Valid Inputs!!
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+            {% endif %}
+            {% if msg == 2 %}
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                         Recorded Added !!
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                </div>
+            {% endif %}
+                 <div class="container tabcontent" id="subject">
+                            <h3>Assignment</h3>
+                              <hr>
+                              <div class="card">
+                                  <div class="card body">
+                                    <div class="col-md-12 form-group">
+                                        <b>Class<span style="color:red">*</span></b> 
+                                        <select id="std" class="form-control std" >
+                                            <option value="">--Select--</option>
+                                            <option value="1">1st Std</option>
+                                            <option value="2">2nd Std</option>
+                                            <option value="3">3rd Std</option>
+                                            <option value="4">4th Std</option>
+                                            <option value="5">5th Std</option>
+                                            <option value="6">6th Std</option>
+                                            <option value="7">7th Std</option>
+                                            <option value="8">8th Std</option>
+                                            <option value="9">9th Std</option>
+                                           <option value="10">10th Std</option>
+                                        </select>
+                                        <label style="color:red;" class="lblhide" id="lblclass">Please select Class</label>
+                                    </div> 
+                                    <div class="col-md-12 form-group stt po">
+                                                      <b>Subject<span style="color:red">*</span></b> 
+                                                      <select id="Sub" class="form-control">
+                                                        <option value="">--Select--</option>
+
+                                                        <option value="Marathi">Marathi</option>
+                                                        <option value="Hindi">Hindi</option>
+                                                        <option value="English">English</option>
+                                                        <option value="History">History</option>
+                                                        <option value="Geography">Geography</option>
+                                                        <option value="Science">Science</option>
+                                                        <option value="Civics">Civics</option>
+                                                        <option value="Geomentry">Geomentry</option>
+                                                        <option value="Algebra">Algebra</option>
+                                                      </select>
+                                                      <label style="color:red;" class="lblhide" id="lblsub">Please select subject</label>
+                                    </div>
+                                    <div class="col-md-12 from-group st po">
+                                        <b>Subject<span style="color:red">*</span></b>
+                                        <select id="Sub" class="form-control">
+                                                        <option value="">--Select--</option>
+
+                                                        <option value="Marathi">Physics</option>
+                                                        <option value="Hindi">Chimeastry</option>
+                                                        <option value="English">Bio</option>
+                                                        <option value="History">Math</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 from-group sttt po">
+                                        <b>Subject<span style="color:red">*</span></b>
+                                        <select id="Sub" class="form-control">
+                                                        <option value="">--Select--</option>
+
+                                                        <option value="Marathi">Marathi</option>
+                                                        <option value="Hindi">English</option>
+                                                        <option value="English">History</option>
+                                                        <option value="History">Gio</option>
+                                                        <option value="History">math</option>
+                                                        <option value="History">Skill's</option>
+
+                                        </select>
+                                    </div>
+
+
+
+
+
+
+                                                  <div class="col-md-12 form-group">
+                                                    <b>Assignment Title<span style="color:red">*</span></b> 
+                                                    <input type="text" id="Assigntitle" placeholder="Assignment Title" class="form-control">
+                                                    <label style="color:red;" class="lblhide" id="lbltitle">Please select title</label>
+                                                  </div>
+
+                                                  <div class="col-md-12 form-group">
+                                                    <b>Upload Assignment<span style="color:red">*</span></b> 
+                                                    <br>
+                                                    <input type="file" id="uploadAssign">
+                                                    <br>
+                                                    <label style="color:red;" class="lblhide" id="lblupload">Please upload assignment</label>
+                                        </div>
+                                        <div class="col-md-12 form-group">
+                                          <b>Assignment Completion Date<span style="color:red">*</span></b> 
+                                          <input type="date" id="uploaddate" class="form-control">
+                                          <label style="color:red;" class="lblhide" id="lbldate">Please select date</label>
+                                        </div>
+
+                                        <div class="col-md-12 form-group">
+                                          <b>Comment</b> 
+                                          <textarea type="text" id="Comment" placeholder="Comment" class="form-control"></textarea>
+                                        </div>
+                                        <div class="col-md-5 form-group">
+                                          <button id="btnsubmit" class="btn btn-success" >Submit</button>
+                                          <div class="col-md-8 float-right text-align-center">
+                                            <label style="color:red;" id="lbltitle">All * filled are mandetory</label>
+                                          </div>
+                                        </div>
+
+                                          </div>
+                                        </div>
+
+
+                                        <script>
+                                            $(document).ready(function()
+                                            {
+                                              $(".lblhide").hide();
+
+                                              $("#btnsubmit").click(function()
+                                              {
+                                                var std = $("#std").val();
+                                                if(std =="")
+                                                {
+
+                                                  $("#lblclass").show();
+
+                                                }
+                                                else
+                                                {
+                                                  $("#lblclass").hide();
+
+                                                }
+                                                var subject = $("#Sub").val();
+                                                if(subject =="")
+                                                {
+
+                                                  $("#lblsub").show();
+
+                                                }
+                                                else
+                                                {
+                                                  $("#lblsub").hide();
+
+                                                }
+
+                                              var title = $("#Assigntitle").val();
+                                              if(title =="")
+                                              {
+
+                                                $("#lbltitle").show();
+
+                                              }
+                                              else
+                                              {
+                                                $("#lbltitle").hide();
+
+                                              }
+                                              var ext = $('#uploadAssign').val().split('.').pop().toLowerCase();
+                                              if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+                                              $("#lblupload").show();
+                                              }
+                                              else
+                                              {
+                                              $("#lblupload").hide();
+                                              }
+                                              var date = $('#uploaddate').val();
+                                              if(date==""){
+                                              $("#lbldate").show();
+                                              }
+                                              else
+                                              {
+                                              $("#lbldate").hide();
+                                              }
+
+
+
+                                              })
+                                            })
+                                          </script>
+                </div>
+            
+            <!---Assinmeant Show -->
+             <div class="container tabcontent" id="submited">
+                 <div class="row">
+                     <div class="col-sm-12">
+                         <form action="#">
+                                <select name="cars" class="custom-select mb-3">
+                                  <option value="">--Select--</option>
+                                            <option value="1">1st Std</option>
+                                            <option value="2">2nd Std</option>
+                                            <option value="3">3rd Std</option>
+                                            <option value="4">4th Std</option>
+                                            <option value="5">5th Std</option>
+                                            <option value="6">6th Std</option>
+                                            <option value="7">7th Std</option>
+                                            <option value="8">8th Std</option>
+                                            <option value="9">9th Std</option>
+                                           <option value="10">10th Std</option>
+                                </select>
+                                 
+                         </form>
+                     </div>
+                 </div>
+                 <div class="row">
+                     <div class="col-sm-12">
+                         <table class="table table-striped">
+                             <thead>
+                                 <tr>
+                                    <th scope="col">Roll NO</th>
+                                    <th scope="col">Name of Student</th>
+                                    <th scope="col">Assinment NO</th>
+                                    <th scope="col">Assinment</th>
+                            
+                                  </tr>
+                             </thead>
+                             <tbody>
+                                 <td> 25</td>
+                                  <td> shrikant sawarkar</td>
+                                  <td> 2</td>
+                                  <td> <img src="{{i.stdphoto.url}}" alt="Not uploaded :("  height="100px" width="100px"></td>
+                             </tbody>
+                         </table>
+                     </div>
+                 
+                 </div>
+            </div>
+            <div class="container tabcontent" id="live">
+                
+                    <div class="row">
+                     
+                        <div class="col-md-6">
+                                <h3><b>Go Live</b></h3>
+                                    <hr>
+                           
+                                    <div class="card">
+                                        <div class="card-body">
+                                             <form action="liv" method="post">
+                                                    {% csrf_token %}
+                                                <div class="from-group">
+                                                        <label for = "usr">Class</label>
+                                                      <select name="cars" class="custom-select mb-3">
+                                                                    <option value="">--Select--</option>
+                                                                    <option value="1">1st Std</option>
+                                                                    <option value="2">2nd Std</option>
+                                                                    <option value="3">3rd Std</option>
+                                                                    <option value="4">4th Std</option>
+                                                                    <option value="5">5th Std</option>
+                                                                    <option value="6">6th Std</option>
+                                                                    <option value="7">7th Std</option>
+                                                                    <option value="8">8th Std</option>
+                                                                    <option value="9">9th Std</option>
+                                                                    <option value="10">10th Std</option>
+                                                        </select>
+
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for = "usr">Subject</label>
+                                                    <input type="text" class="form-control" id="usr" name="subj">
+                                                </div>
+                                                 <div class="form-group">
+                                                      <label for="comment">Link:</label>
+                                                      <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                                                </div> 
+
+                                                 <input type="submit" value="Add" class="btn btn-primary">
+                                                
+                                        </form><br>
+                                            <input type="submit" value="GoLive" class="btn btn-primary" id="start">
+                                        </div>
+                                    </div>
+                            
+                            </div>
+                        
+                            <div class="col-sm-6" id="jitsi-container">
+                              
+                              <script>
+                                        var button = document.querySelector('#start');
+                                        var container = document.querySelector('#jitsi-container');
+                                        var api = null;
+
+                                        button.addEventListener('click', () => {
+                                            var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                                            var stringLength = 30;
+
+                                            function pickRandom() {
+                                            return possible[Math.floor(Math.random() * possible.length)];
+                                            }
+
+                                        var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
+
+                                            var domain = "meet.jit.si";
+                                            var options = {
+                                                "roomName": randomString,
+                                                "parentNode": container,
+                                                "width": 600,
+                                                "height": 600,
+                                            };
+                                            api = new JitsiMeetExternalAPI(domain, options);
+                                        });
+                            </script>
+                        </div>
+                           
+                    </div>
+                   
+            </div>
+            <!--- all students-->
+            
+            <div class="container tabcontent" id="alls">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3><b>Students</b></h3>
+                        <hr>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                              <label for="sel1">Select Standard</label>
+                              <select class="form-control" id="sel1" name="sellist1">
+                                <option>1 Standard</option>
+                                <option>2 Standard</option>
+                                <option>3 Standard</option>
+                                <option>4 Standard</option>
+                                  <option>5 Standard</option>
+                                  <option>7 Standard</option>
+                                  <option>8 Standard</option>
+                                  <option>9 Standard</option>
+                                  <option>10 Standard</option>
+                                  <option>11 Standard</option>
+                                  <option>12 Standard</option>
+                                   
+                              </select>
+                        </div>
+                        <table class="table table-striped">
+                                     <thead>
+                                         <tr>
+                                            <th scope="col">Roll NO</th>
+                                            <th scope="col">Name of Student</th>
+                                            <th scope="col">Password</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <td> 25</td>
+                                          <td> shrikant sawarkar</td>
+                                          <td> 2</td>
+
+                                     </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--Add Student -->
+             <div class="container tabcontent" id="adstd">
+                    <div class="row">
+                        
+                            <div class="col-md-12">
+                                 <a href="#"><i class="fas fa-arrow-circle-left  fa-2x float-right"></i></a>
+                                <h3><b>Add Student</b></h3>
+                              
+                                    <hr>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="taddstd" method="post">
+                                            {% csrf_token %}
+                                            <div class="from-group">
+                                                    <label for = "usr">Class</label>
+                                                  <select name="cars" class="custom-select mb-3">
+                                                      <option value="">--Select--</option>
+                                                                <option value="1">1st Std</option>
+                                                                <option value="2">2nd Std</option>
+                                                                <option value="3">3rd Std</option>
+                                                                <option value="4">4th Std</option>
+                                                                <option value="5">5th Std</option>
+                                                                <option value="6">6th Std</option>
+                                                                <option value="7">7th Std</option>
+                                                                <option value="8">8th Std</option>
+                                                                <option value="9">9th Std</option>
+                                                                <option value="10">10th Std</option>
+                                                    </select>
+                                 
+ 
+                                            </div>
+                                            <div class="form-group">
+                                                <label for = "usr">Roll NO</label>
+                                                <input type="text" class="form-control" id="usr" name="rollno">
+                                            </div>
+                                             <div class="form-group">
+                                                  <label for="comment">Name</label>
+                                                  <input type="text" class="form-control" id="usr" name="name">
+                                            </div> 
+                                             <div class="form-group">
+                                                  <label for="comment">User Id</label>
+                                                  <input type="text" class="form-control" id="usr" name="usrid">
+                                            </div> 
+                                            
+                                             <div class="form-group">
+                                                  <label for="comment">Password</label>
+                                                  <input type="text" class="form-control" id="usr" name="passw">
+                                            </div> 
+                                             
+                                             <input type="submit" value="Submit" class="btn btn-primary">
+                                             
+                                             <input type="submit" value="Fetch" class="btn btn-primary float-right">
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                   
+             </div>
+            <!-- this is displaly -->
+                   <!--- <div class="container tabcontent" id="shaw">
+                        <div class="row">
+                             <div class="col-sm-12">
+                                 <table class="table table-striped">
+                                     <thead>
+                                         <tr>
+                                            <th scope="col">Roll NO</th>
+                                            <th scope="col">Name of Student</th>
+                                            <th scope="col">Password</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <td> 25</td>
+                                          <td> shrikant sawarkar</td>
+                                          <td> 2</td>
+
+                                     </tbody>
+                                 </table>
+                             </div>
+
+                         </div>
+
+                    </div>-->
+<!-- Assingnment -->
+                <div class="container tabcontent " id="assinment">
+                    <h3>Student-Assignment</h3>
+                   
+                    <hr>
+                     
+                <div class="card">
+                              <div class="card body">
+                                <div class="col-md-12 form-group">
+                                    <b>Name<span style="color:red">*</span></b> 
+                                    <input type="text" id="Name" placeholder="Name" class="form-control">
+                                    <label style="color:red;" class="lblhide" id="lblName">Please select Name</label>
+                                  </div>
+                                <div class="col-md-12 form-group">
+                                    <b>Class<span style="color:red">*</span></b> 
+                                    <select id="std" class="form-control">
+                                      <option value="">--Select--</option>
+                                      <option value="1">1st Std</option>
+                                      <option value="2">2nd Std</option>
+                                      <option value="3">3rd Std</option>
+                                      <option value="4">4th Std</option>
+                                      <option value="5">5th Std</option>
+                                      <option value="6">6th Std</option>
+                                      <option value="7">7th Std</option>
+                                      <option value="8">8th Std</option>
+                                      <option value="9">9th Std</option>
+                                     <option value="10">10th Std</option>
+
+                                    </select>
+                                    <label style="color:red;" class="lblhide" id="lblclass">Please select Class</label>
+                                        </div> 
+                                        <div class="col-md-12 form-group">
+                                          <b>Subject<span style="color:red">*</span></b> 
+                                          <select id="Sub" class="form-control">
+                                            <option value="">--Select--</option>
+                                            <option value="Marathi">Marathi</option>
+                                            <option value="Hindi">Hindi</option>
+                                            <option value="English">English</option>
+                                            <option value="History">History</option>
+                                            <option value="Geography">Geography</option>
+                                            <option value="Science">Science</option>
+                                            <option value="Civics">Civics</option>
+                                            <option value="Geomentry">Geomentry</option>
+                                            <option value="Algebra">Algebra</option>
+                                          </select>
+                                          <label style="color:red;" class="lblhide" id="lblsub">Please select subject</label>
+                                              </div> 
+
+                                              <div class="col-md-12 form-group">
+                                                <b>Assignment Title<span style="color:red">*</span></b> 
+                                                <input type="text" id="Assigntitle" placeholder="Assignment Title" class="form-control">
+                                                <label style="color:red;" class="lblhide" id="lbltitle">Please select title</label>
+                                              </div>
+
+                                              <div class="col-md-12 form-group">
+                                                <b>Upload Assignment<span style="color:red">*</span></b> 
+                                                <br>
+                                                <input type="file" id="uploadAssign">
+                                                <br>
+                                                <label style="color:red;" class="lblhide" id="lblupload">Please upload assignment</label>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                      <b>Assignment Completion Date<span style="color:red">*</span></b> 
+                                      <input type="date" id="uploaddate" class="form-control">
+                                      <label style="color:red;" class="lblhide" id="lbldate">Please select date</label>
+                                    </div>
+
+                                    <div class="col-md-12 form-group">
+                                      <b>Comment</b> 
+                                      <textarea type="text" id="Comment" placeholder="Comment" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-md-5 form-group">
+                                      <button id="btnsubmit" class="btn btn-success" >Submit</button>
+                                      <div class="col-md-8 float-right text-align-center">
+                                        <label style="color:red;" id="lbltitle">All * filled are mandetory</label>
+                                      </div>
+                                    </div>
+
+                                      </div>
+                                    </div>
+
+
+                                    <script>
+                                        $(document).ready(function()
+                                        {
+                                          $(".lblhide").hide();
+
+                                          $("#btnsubmit").click(function()
+                                          {
+                                            var std = $("#std").val();
+                                            if(std =="")
+                                            {
+
+                                              $("#lblclass").show();
+
+                                            }
+                                            else
+                                            {
+                                              $("#lblclass").hide();
+
+                                            }
+                                            var subject = $("#Sub").val();
+                                            if(subject =="")
+                                            {
+
+                                              $("#lblsub").show();
+
+                                            }
+                                            else
+                                            {
+                                              $("#lblsub").hide();
+
+                                            }
+
+                                          var title = $("#Assigntitle").val();
+                                          if(title =="")
+                                          {
+
+                                            $("#lbltitle").show();
+
+                                          }
+                                          else
+                                          {
+                                            $("#lbltitle").hide();
+
+                                          }
+                                          var ext = $('#uploadAssign').val().split('.').pop().toLowerCase();
+                                          if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+                                          $("#lblupload").show();
+                                          }
+                                          else
+                                          {
+                                          $("#lblupload").hide();
+                                          }
+                                          var date = $('#uploaddate').val();
+                                          if(date==""){
+                                          $("#lbldate").show();
+                                          }
+                                          else
+                                          {
+                                          $("#lbldate").hide();
+                                          }
+
+                                          var Name = $("#Name").val();
+                                          if(Name =="")
+                                          {
+
+                                            $("#lblName").show();
+
+                                          }
+                                          else
+                                          {
+                                            $("#lblName").hide();
+
+                                          }
+
+
+                                          })
+                                        })
+                                      </script>
+ 
+               
+                </div>
+<!-- Exam -->
+            
+             <div class="container tabcontent" id="exam">
+                 <div class="row">
+                        <div class="col-md-12">
+                                <h3><b>Question Paper</b></h3>
+                                    <hr>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="omm" method="post">
+                                             {% csrf_token %}
+                                            <div class="from-group">
+                                                    <label for = "usr">Class</label>
+                                                  <select name="cars" class="custom-select mb-3">
+                                                      <option value="">--Select--</option>
+                                                                <option value="1">1st Std</option>
+                                                                <option value="2">2nd Std</option>
+                                                                <option value="3">3rd Std</option>
+                                                                <option value="4">4th Std</option>
+                                                                <option value="5">5th Std</option>
+                                                                <option value="6">6th Std</option>
+                                                                <option value="7">7th Std</option>
+                                                                <option value="8">8th Std</option>
+                                                                <option value="9">9th Std</option>
+                                                                <option value="10">10th Std</option>
+                                                    </select>
+                                 
+ 
+                                            </div>
+                                            
+                                            
+                                            <div class="form-group">
+                                                <label for = "usr">Question</label>
+                                                 <textarea class="form-control" rows="2" id="comment" name="comment"></textarea>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                  <label>
+                                                        Answer Type   
+                                                  </label>
+                                                <br>
+                                                <!---
+                                                <div class="form-check-inline">
+                                                  <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optradio" id="Onelineans" onclick="one()" >Oneline Answer
+                                                  </label>
+                                                </div>--->
+                                                <!--
+                                                 <div class="form-check-inline">
+                                                  <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optradio"  onclick="two()">Brief Answer
+                                                  </label>
+                                                </div> -->
+                                                 <div class="form-check-inline">
+                                                      <label class="form-check-label">
+                                                        <input type="radio" class="form-check-input" name="optradio" onclick="three()" value="multi" >Multichoice Answer
+                                                      </label>
+                                                </div>
+                                                 <div class="form-check-inline">
+                                                  <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optradio"  onclick="four()" value="single">Single Choice Answer
+                                                  </label>
+                                                </div>
+                                                
+                                            </div>
+                                          
+                                        <div class="container" id="opt">
+                                            
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                     <div class="form-group">
+                                                        <label for = "usr">Answer</label>
+                                                         <textarea class="form-control" rows="2" id="comment"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+           
+                                        </div>
+                                   <!--
+                                    <div class="container" id="opt1">
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-6 " >
+                                                    <div class="form-group">
+                                                          <label for="comment">Opt A</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name="text2">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option B</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name="text2">
+                                                             
+                                                    </div> 
+                                                </div>
+                                          
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option C</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name="text2">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option D</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name="text2">
+                                                             
+                                                    </div> 
+                                                </div>
+                                          
+                                            </div>
+                                    </div>-->
+                                    <div class="container" id="opt1">
+                                            <div class="row">
+                                                <div class="col-sm-6 " >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option A</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Give value of CheckBox" name="text1">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option B</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Give value of CheckBox" name="text2">
+                                                             
+                                                    </div> 
+                                                </div>
+                                          
+                                                <!--
+                                                <div class="col-sm-6 " >
+                                                      <div class="form-check-inline">
+                                                              <label class="form-check-label" for="check1">
+                                                                <input type="checkbox" class="form-check-input" id="check1" name="vehicle1" value="something" checked>Option 1
+                                                              </label>
+                                                      </div>
+    
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                     <div class="form-check-inline">
+                                                          <label class="form-check-label" for="check2">
+                                                            <input type="checkbox" class="form-check-input" id="check2" name="vehicle2" value="something">Option 2
+                                                          </label>
+                                                    </div>
+                                                </div>
+                                                    -->
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option C</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Give value of CheckBox" name="text3">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option D</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Give value of CheckBox" name="text4">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <!--
+                                                <div class="col-sm-6"  >
+                                                      <div class="form-check-inline">
+                                                          <label class="form-check-label" for="check3">
+                                                            <input type="checkbox" class="form-check-input" id="check3" name="vehicle3" value="something">Option 3
+                                                          </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                     <div class="form-check-inline">
+                                                          <label class="form-check-label" for="check4">
+                                                            <input type="checkbox" class="form-check-input" id="check4" name="vehicle4" value="something">Option 4
+                                                          </label>
+                                                    </div>
+                                                </div>
+                                                -->
+                                            </div>
+                                    </div>
+                                <div class="container" id="opt2">
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-6 " >
+                                                    <div class="form-group">
+                                                          <label for="comment">  Single Choice</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name=" ">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option B</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name=" ">
+                                                             
+                                                    </div> 
+                                                </div>
+                                          
+                                            </div>
+                                            <div class="row">
+                                                
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option C</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name=" ">
+                                                             
+                                                    </div> 
+                                                </div>
+                                                <div class="col-sm-6"  >
+                                                    <div class="form-group">
+                                                          <label for="comment">Option D</label>
+                                                           
+                                                                <input type="text" class="form-control" placeholder="Past Options here" name=" ">
+                                                             
+                                                    </div> 
+                                                </div>
+                                          
+                                            </div>
+                                    </div>
+                                             <input type ="submit" value="Submit" id="SignIn" class="btn btn-primary"> 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+             </div>
+            
+             <div class="container tabcontent" id="exam2">
+                 <h1> this is exam2</h1>
+            </div>
+</div>
+</div>
+</div>
+    </div>
+
+ <!---
+<script>
+    $(document).ready(function(){
+       
+    debugger
+      $("#opt").hide();
+  $("#Onelineans").onchange(function(){
+      if(this.val()==true)
+         alert("false");
+            $("#opt").show();
+      
+      else
+          $("#opt").hide();
+  });
+   
+});
+</script>
+    -->
+<script>
+function one()
+    {
+        document.getElementById("opt").style.display = "inline";
+         document.getElementById("opt1").style.display = "none";
+        document.getElementById("opt2").style.display = "none";
+        document.getElementById("opt3").style.display = "none";
+    }
+function three()
+    {
+        document.getElementById("opt").style.display = "none";
+         document.getElementById("opt1").style.display = "inline";
+        document.getElementById("opt2").style.display = "none";
+        document.getElementById("opt3").style.display = "none";
+    }
+function four()
+    {
+        document.getElementById("opt").style.display = "none";
+         document.getElementById("opt1").style.display = "none";
+        document.getElementById("opt2").style.display = "inline";
+        document.getElementById("opt3").style.display = "none";
+    }
+</script>
+    
+    
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+    
+function openTab(evt,tabs){
+   var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++)
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) 
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+      document.getElementById(tabs).style.display = "block";
+        evt.currentTarget.className += " active";
+}
+     
+document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").focus();
+    
+
+</script>
+
+</body>
+</html> 
+  
+    

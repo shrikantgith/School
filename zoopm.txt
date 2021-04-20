@@ -1,0 +1,34 @@
+sdk key :- aPdBrUSAFsxUPvKAB4m2qRWypO2PwnK0ZIEc
+sdk secrete :- 8fkuxB49aiHzqKvcChVlSsCcHR1Ebj1cvwhs
+
+
+
+2nd
+API Key
+Is8fSZq0QoiD_RwFErEbmw
+
+API Secret
+u9OcU7hhll3yHpvhokoW7JeaukoJpNbaRKTD
+
+
+IM Chat History Token
+eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJxdjQ3YWFMaFJVcUVDcV9BUFptX0tRIn0.sal0FSMxhR_L0QFf-0pqT1bkMi0xVRXijT import numpy as np
+    import cv2
+
+    cap = cv2.VideoCapture(0)
+
+    while (True):
+        # Capture frame-by-frame
+        ret, frame = cap.read()
+
+        # Our operations on the frame come here
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+        # Display the resulting frame
+        cv2.imshow('frame', gray)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # When everything done, release the capture
+    cap.release()
+    cv2.destroyAllWindows()mDNFpP6ps

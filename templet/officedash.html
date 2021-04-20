@@ -1,0 +1,402 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+
+    <title></title>
+      <style>
+      body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+    
+}
+          .navbar-nav { 
+            margin-left: auto; 
+        } 
+ 
+</style>
+      
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark tp">
+
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav  ">
+                            <a class="navbar-brand" href="#"><img src=" {% static 'image\Best-School-in-Meerut-1.png' %}" alt="Logo" style="width:40px;"></a>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Assignment</a>
+                          </li>    
+                        </ul>
+                      </div>  
+        </nav>
+<div class="container-fluid">
+<div class="row">
+    
+    <div class="col-md-12">
+        <div id="mySidenav" class="sidenav">
+            
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+           <a href="#" style="margin-left: 70px;" ><i class="fas fa-user-circle fa-2x"></i>  </a> 
+            <a href="#" style="margin-left: 0%;">Shrikant Sawarkar</a><br><br>
+            <a href="#" class="tablinks" onclick="openTab(event,'notic')">Add Notic</a>
+              <a href="#" class="tablinks"  onclick="openTab(event,'disp')" id="defaultOpen">Student Details</a>
+            <a href="exoffice" class="tablinks"   >Examination</a>
+ 
+            
+              <a href="logoff"  >Logout</a>
+        </div>
+
+        <div id="main">
+            
+                
+              <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span><br>
+            
+                <!-- this is Notic  -->
+                <div class="container tabcontent" id="notic">
+                   
+                    <div class="row">
+                        
+                            <div class="col-md-12">
+                                <h3><b>Notice</b></h3>
+                                    <hr>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <from action="#">
+                                             <div class="form-group">
+                                                 <label for="cars">Send To !</label>
+                                                  <select name="cars" class="custom-select mb-3">
+                                                      <option selected>Select </option>
+                                                      <option value="Students">Students</option>
+                                                      <option value="Teachers">Teachers</option>
+                                                      <option value="Public">Public</option>
+                                                  </select>
+                                             </div>
+                                            <div class="form-group">
+                                                <label for = "usr">Title</label>
+                                                <input type="text" class="form-control" id="usr">
+                                            </div>
+                                             <div class="form-group">
+                                                  <label for="comment">Comment:</label>
+                                                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                                            </div> 
+                                            <div class="custom-file mb-3">
+                                                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                                                  <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                             <input type="submit" value="Submit" class="btn btn-primary">
+                                        </from>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                   
+                    
+                </div>
+            
+                    <!-- This is Subjects -->
+            
+                 <div class="container tabcontent" id="disp">
+                     
+                     <hr>
+                       <table class="table table-striped">
+                    
+            <thead>
+                 <tr>
+                    <th scope="col">Application_ID</th>
+                    <th scope="col">Name of Student</th>
+                    <th scope="col">Mobile_NO</th>
+                    <th scope="col">Date_Of_Birth</th>
+                    <th scope="col"> Student Photo</th>
+                    <th scope="col"><a href="#">Export to xl</a></th>
+                  </tr>
+            </thead>
+                
+            <tbody>
+                {% for i in b %}
+                    <tr>
+                          <th scope="row">{{i.id}}</th>
+                          <td>{{i.Username}} {{i.Middlename}} {{i.Lastname}}</td>
+                          <td>{{i.father_mob}}</td>
+                          <td>{{i.dob}}</td>
+                          <td> 
+                            {% if i.stdphoto.url == None %}
+
+                                <img src=" " alt="!!"  height="100px" width="100px">
+                            {% else %}
+                                <img src="{{i.stdphoto.url}}" alt="Not uploaded :("  height="100px" width="100px">
+                            {% endif %}</td>
+                        
+                          <td><a href="update/{{i.id}}"><i class="fas fa-info" style="color:orange">Detail Info</i></a><br>
+                               <a href="delete/{{i.id}}"><i class="fas fa-trash ">Delete</i></a><br>
+                              
+                               <a href="update/{{i.id}}"><i class="fas fa-pen-alt">Update</i></a>
+                          </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                </div>
+
+                <div class="container tabcontent " id="assinment">
+                    <h3>Student-Assignment</h3>
+                    <hr>
+                <div class="card">
+                              <div class="card body">
+                                <div class="col-md-12 form-group">
+                                    <b>Name<span style="color:red">*</span></b> 
+                                    <input type="text" id="Name" placeholder="Name" class="form-control">
+                                    <label style="color:red;" class="lblhide" id="lblName">Please select Name</label>
+                                  </div>
+                                <div class="col-md-12 form-group">
+                                    <b>Class<span style="color:red">*</span></b> 
+                                    <select id="std" class="form-control">
+                                      <option value="">--Select--</option>
+                                      <option value="1">1st Std</option>
+                                      <option value="2">2nd Std</option>
+                                      <option value="3">3rd Std</option>
+                                      <option value="4">4th Std</option>
+                                      <option value="5">5th Std</option>
+                                      <option value="6">6th Std</option>
+                                      <option value="7">7th Std</option>
+                                      <option value="8">8th Std</option>
+                                      <option value="9">9th Std</option>
+                                     <option value="10">10th Std</option>
+
+                                    </select>
+                                    <label style="color:red;" class="lblhide" id="lblclass">Please select Class</label>
+                                        </div> 
+                                        <div class="col-md-12 form-group">
+                                          <b>Subject<span style="color:red">*</span></b> 
+                                          <select id="Sub" class="form-control">
+                                            <option value="">--Select--</option>
+                                            <option value="Marathi">Marathi</option>
+                                            <option value="Hindi">Hindi</option>
+                                            <option value="English">English</option>
+                                            <option value="History">History</option>
+                                            <option value="Geography">Geography</option>
+                                            <option value="Science">Science</option>
+                                            <option value="Civics">Civics</option>
+                                            <option value="Geomentry">Geomentry</option>
+                                            <option value="Algebra">Algebra</option>
+                                          </select>
+                                          <label style="color:red;" class="lblhide" id="lblsub">Please select subject</label>
+                                              </div> 
+
+                                              <div class="col-md-12 form-group">
+                                                <b>Assignment Title<span style="color:red">*</span></b> 
+                                                <input type="text" id="Assigntitle" placeholder="Assignment Title" class="form-control">
+                                                <label style="color:red;" class="lblhide" id="lbltitle">Please select title</label>
+                                              </div>
+
+                                              <div class="col-md-12 form-group">
+                                                <b>Upload Assignment<span style="color:red">*</span></b> 
+                                                <br>
+                                                <input type="file" id="uploadAssign">
+                                                <br>
+                                                <label style="color:red;" class="lblhide" id="lblupload">Please upload assignment</label>
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                      <b>Assignment Completion Date<span style="color:red">*</span></b> 
+                                      <input type="date" id="uploaddate" class="form-control">
+                                      <label style="color:red;" class="lblhide" id="lbldate">Please select date</label>
+                                    </div>
+
+                                    <div class="col-md-12 form-group">
+                                      <b>Comment</b> 
+                                      <textarea type="text" id="Comment" placeholder="Comment" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col-md-5 form-group">
+                                      <button id="btnsubmit" class="btn btn-success" >Submit</button>
+                                      <div class="col-md-8 float-right text-align-center">
+                                        <label style="color:red;" id="lbltitle">All * filled are mandetory</label>
+                                      </div>
+                                    </div>
+
+                                      </div>
+                                    </div>
+
+
+                                    <script>
+                                        $(document).ready(function()
+                                        {
+                                          $(".lblhide").hide();
+
+                                          $("#btnsubmit").click(function()
+                                          {
+                                            var std = $("#std").val();
+                                            if(std =="")
+                                            {
+
+                                              $("#lblclass").show();
+
+                                            }
+                                            else
+                                            {
+                                              $("#lblclass").hide();
+
+                                            }
+                                            var subject = $("#Sub").val();
+                                            if(subject =="")
+                                            {
+
+                                              $("#lblsub").show();
+
+                                            }
+                                            else
+                                            {
+                                              $("#lblsub").hide();
+
+                                            }
+
+                                          var title = $("#Assigntitle").val();
+                                          if(title =="")
+                                          {
+
+                                            $("#lbltitle").show();
+
+                                          }
+                                          else
+                                          {
+                                            $("#lbltitle").hide();
+
+                                          }
+                                          var ext = $('#uploadAssign').val().split('.').pop().toLowerCase();
+                                          if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+                                          $("#lblupload").show();
+                                          }
+                                          else
+                                          {
+                                          $("#lblupload").hide();
+                                          }
+                                          var date = $('#uploaddate').val();
+                                          if(date==""){
+                                          $("#lbldate").show();
+                                          }
+                                          else
+                                          {
+                                          $("#lbldate").hide();
+                                          }
+
+                                          var Name = $("#Name").val();
+                                          if(Name =="")
+                                          {
+
+                                            $("#lblName").show();
+
+                                          }
+                                          else
+                                          {
+                                            $("#lblName").hide();
+
+                                          }
+
+
+                                          })
+                                        })
+                                      </script>
+ 
+                <div class="container tabcontent" id="comp">
+                    <h1>This is the Notic complited</h1>
+                </div>
+        </div>
+</div>
+</div>
+</div>
+    
+
+ 
+   
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+    
+function openTab(evt,tabs){
+   var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++)
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) 
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+      document.getElementById(tabs).style.display = "block";
+        evt.currentTarget.className += " active";
+}
+     
+document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen").focus();
+</script>
+   
+</body>
+</html> 
+  
+    

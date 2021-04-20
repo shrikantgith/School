@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+
+    <title>Hello, world!</title>
+      <style>
+          body{
+              background-color:darkgray;
+            }
+           @media screen and (min-width:601px)
+           {
+              div.min
+               {
+                  margin-top: 5%;
+                  
+               }
+          }
+          @media screen and (max-width:600px)
+          {
+              div.min
+              {
+                  margin-top:0%;              
+              }
+          }
+      
+      </style>
+      <script>
+          $(document).ready(function(){
+              $("#u").click(function(){
+                  $("#mo").fadeToggle("slow");
+                  $("#sp").fadeToggle("slow");
+              })
+          })
+          $(document).ready(function(){
+              $("#mo").click(function(){
+                  $("#u").fadeToggle("slow");
+                  $("#sp").fadeToggle("slow");
+              })
+          })
+      </script>
+    </head>
+<body>
+    <div class="container">
+    </div>
+    <div class="container min">
+        <center>
+        <div class="row">
+            
+            <div class="col-sm-12">
+        
+                <div class="card p-3">
+                    <i class="fas fa-user-tie fa-5x"></i>
+                    <div class="card-body">
+                        <h4 class="card-title">OTP</h4>
+                         <form method="post" action="veri">
+                               {% csrf_token %}
+                             <input type="text" name="user" placeholder="UserId" id="u"><br>
+                             <span id="sp">OR</span><br>
+                             <input type="text" name="mob" placeholder="Mobile no" id="mo"><br><br>
+                              <input type="submit" class="btn btn-primary" value="Submit"><br><br>
+                             
+                             
+                             {% if msg == 1%}
+                                <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>Don't fill Both</strong> Only provide User name <strong>OR</strong> Password 
+                                </div><br>
+                             {% endif %}
+                             
+                             {% if msg == 2%}
+                                <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>{{res}}</strong>  
+                                </div><br>
+                             {% endif %}
+                             {% if msg == 3%}
+                                <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                     This <strong>UserId </strong>is not <strong>Registered! </strong>   
+                                </div><br>
+                             {% endif %}
+                             {% if msg == 4%}
+                                <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    <strong>{{res}}</strong>  
+                                </div><br>
+                             {% endif %}
+                             {% if msg == 5%}
+                                <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    This <strong>Mobile NO </strong>is not <strong>Registered! </strong> 
+                                </div><br>
+                             {% endif %}
+                             
+                             {% if msg == 6 %}
+                                 <div class="alert alert-warning alert-dismissible fade show " role="alert" >
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        Please!<strong>Provide Valid Input</strong> 
+                                    </div><br>
+                             {% endif %}
+                             
+                             
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div></center>
+    </div>
+</body>
+</html>

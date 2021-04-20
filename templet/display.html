@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/f49274e4c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"          aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                  <form class="form-inline" method="POST" action ="search">
+                      {% csrf_token %}
+                        <input class="form-control mr-sm-2 ml-5" type="search" placeholder="Search by Name" aria-label="Search" name="namee">
+                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                  <form class="form-inline" method="POST" action ="search">
+                       {% csrf_token %}
+                      <input class="form-control mr-sm-2 ml-2 " type="search" placeholder="Search by ID" aria-label="Search" name="id">
+                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                     
+                  <form class="form-inline" method="POST" action ="search">
+                       {% csrf_token %}
+                      <input class="form-control mr-sm-2 ml-2" type="search" placeholder="Search by Class" aria-label="Search" name="std">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                    
+                    <a href="back"><i class="fas fa-sign-out-alt float-right fa-3x " style="margin-left: 250px;"></i></a>
+                 
+            </div>
+      </div>
+</nav>
+ 
+   
+        <table class="table table-striped">
+                    
+            <thead>
+                 <tr>
+                    <th scope="col">Application_ID</th>
+                    <th scope="col">Name of Student</th>
+                    <th scope="col">Mobile_NO</th>
+                    <th scope="col">Date_Of_Birth</th>
+                    <th scope="col"> Student Photo</th>
+                    <th scope="col"><a href="#">Export to xl</a></th>
+                  </tr>
+            </thead>
+                
+            <tbody>
+                {% for i in b %}
+                    <tr>
+                          <th scope="row">{{i.id}}</th>
+                          <td>{{i.Username}} {{i.Middlename}} {{i.Lastname}}</td>
+                          <td>{{i.father_mob}}</td>
+                          <td>{{i.dob}}</td>
+                          <td> 
+                            {% if i.stdphoto.url == None %}
+
+                                <img src=" " alt="!!"  height="100px" width="100px">
+                            {% else %}
+                                <img src="{{i.stdphoto.url}}" alt="Not uploaded :("  height="100px" width="100px">
+                            {% endif %}</td>
+                        
+                          <td><a href="update/{{i.id}}"><i class="fas fa-info" style="color:orange">Detail Info</i></a><br>
+                               <a href="delete/{{i.id}}"><i class="fas fa-trash ">Delete</i></a><br>
+                              
+                               <a href="update/{{i.id}}"><i class="fas fa-pen-alt">Update</i></a>
+                          </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+ 
+</body>
+</html>
